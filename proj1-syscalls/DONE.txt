@@ -1,0 +1,5 @@
+References used for the project
+
+xv6 book, lecture ppt slides, geeksforgeeks, stackoverflow
+
+Also, I have created 2 test files test.c and test1.c test.c is created by referring to code in xv6 book and test1.c is created by referring to the code that professor zhang demonstrated during the lecture.

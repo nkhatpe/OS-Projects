@@ -1,0 +1,42 @@
+** PURPOSE **
+Demo2: add a shell command/program named “myecho” to perform basically the “echo” functionality
+
+** HOW TO APPLY **
+patch -d target-xv6-src-dir < this-patch-file
+
+diff -uNr xv6-intro-base/lab2.c xv6-intro-solution/lab2.c
+--- xv6-intro-base/myecho.c	1969-12-31 19:00:00.000000000 -0500
++++ xv6-intro-solution/myecho.c	2022-02-09 15:16:12.000000000 -0500
+@@ -0,0 +1,20 @@
++#include "types.h"
++#include "user.h"
++
++int
++main(int argc, char *argv[])
++{
++    int i = 0;
++
++    printf(1, "***Print in user space: ");
++    
++    for (i = 1; i < argc; i++)
++    {
++        printf(1, argv[i]);
++        printf(1, " ");
++    }
++
++    printf(1, "\n");
++    
++    exit();
++}
+diff -uNr xv6-intro-base/Makefile xv6-intro-solution/Makefile
+--- xv6-intro-base/Makefile	2020-01-30 14:29:44.000000000 -0500
++++ xv6-intro-solution/Makefile	2020-01-30 14:29:46.000000000 -0500
+@@ -176,6 +176,7 @@
+ 	_usertests\
+ 	_wc\
+ 	_zombie\
+ 	_shutdown\
++	_myecho\
+ 
+ fs.img: mkfs README $(UPROGS)
+ 	./mkfs fs.img README $(UPROGS)

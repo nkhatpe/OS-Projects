@@ -1,0 +1,4 @@
+References used for the project:
+
+xv6 book, lecture ppt slides, stackoverflow, youtube videos of xv6 shared memory 
+

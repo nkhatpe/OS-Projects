@@ -1,0 +1,17 @@
+** PURPOSE **
+Demo1: print in kernel space
+
+** HOW TO APPLY **
+patch -d target-xv6-src-dir < this-patch-file
+
+diff -uNr xv6-intro-base/main.c xv6-intro-solution/main.c
+--- old/main.c       2019-02-09 15:16:12.000000000 -0500
++++ new/main.c   2019-02-09 15:16:12.000000000 -0500
+@@ -34,7 +34,9 @@
+   startothers();   // start other processors
+   kinit2(P2V(4*1024*1024), P2V(PHYSTOP)); // must come after startothers()
+   userinit();      // first user process
++  cprintf("*** Printing in kernel space: zhangy\n");
+   mpmain();        // finish this processor's setup
++  cprintf("+++ Printing in kernel space: zhangy\n");  // this will never print b/c there is a infinite loop in mpmain().
+ }

@@ -1,0 +1,4 @@
+References used for the project:
+
+xv6 book, lecture ppt slides (stride-sched -> course schedule page), stackoverflow, youtube videos of stride scheduling system calls
+
